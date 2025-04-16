@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto</title>
-    <style>
-             body {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario con Comunas</title>
+  <style>
+    body {
             margin: 0;
             padding: 0;
-            background-image: url('donald.Webp');
+            background-image: url('donald.webp');
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
@@ -17,61 +17,164 @@
             justify-content: center;
             align-items: center;
         }
-        h1 {
-            text-align: center;
-        }
 
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    .formulario {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 320px;
+    }
 
-        input, textarea, button {
-            display: block;
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-        }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        .btn-volver {
-            max-width: 500px;
-            margin: 20px auto;
-            text-align: center;
-        }
+    label {
+      margin-top: 10px;
+      display: block;
+    }
 
-        .btn-volver a {
-            text-decoration: none;
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
-        .btn-volver a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .btn {
+      padding: 10px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .resultado {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+      border-radius: 5px;
+      display: none;
+    }
+    .btn-esquina {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-esquina:hover {
+    background-color: #0056b3;
+}
+  </style>
 </head>
 <body>
+  <div class="formulario">
+    <h2>Formulario</h2>
+    <form id="miFormulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required />
 
-    <h1>Formulario de Contacto</h1>
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" required />
 
-    <form>
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit">Enviar</button>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" required />
+
+      <label for="comuna">Comuna:</label>
+      <select id="comuna" required>
+        <option value="">Seleccione una comuna</option>
+        <option value="Cerrillos">Cerrillos</option>
+        <option value="Cerro Navia">Cerro Navia</option>
+        <option value="Conchalí">Conchalí</option>
+        <option value="El Bosque">El Bosque</option>
+        <option value="Estación Central">Estación Central</option>
+        <option value="Huechuraba">Huechuraba</option>
+        <option value="Independencia">Independencia</option>
+        <option value="La Cisterna">La Cisterna</option>
+        <option value="La Florida">La Florida</option>
+        <option value="La Granja">La Granja</option>
+        <option value="La Pintana">La Pintana</option>
+        <option value="La Reina">La Reina</option>
+        <option value="Las Condes">Las Condes</option>
+        <option value="Lo Barnechea">Lo Barnechea</option>
+        <option value="Lo Espejo">Lo Espejo</option>
+        <option value="Lo Prado">Lo Prado</option>
+        <option value="Macul">Macul</option>
+        <option value="Maipú">Maipú</option>
+        <option value="Ñuñoa">Ñuñoa</option>
+        <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
+        <option value="Peñalolén">Peñalolén</option>
+        <option value="Providencia">Providencia</option>
+        <option value="Pudahuel">Pudahuel</option>
+        <option value="Quilicura">Quilicura</option>
+        <option value="Quinta Normal">Quinta Normal</option>
+        <option value="Recoleta">Recoleta</option>
+        <option value="Renca">Renca</option>
+        <option value="San Joaquín">San Joaquín</option>
+        <option value="San Miguel">San Miguel</option>
+        <option value="San Ramón">San Ramón</option>
+        <option value="Santiago">Santiago</option>
+        <option value="Vitacura">Vitacura</option>
+      </select>
+
+      <button type="submit" class="btn">Enviar</button>
     </form>
 
+    <div class="resultado" id="resultado"></div>
+  </div>
+
+  <script>
+    document.getElementById("miFormulario").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const direccion = document.getElementById("direccion").value;
+      const comuna = document.getElementById("comuna").value;
+      alert(
+        "Datos ingresados:\n" +
+        "Nombre: " + nombre + "\n" +
+        "Correo electrónico: " + correo + "\n" +
+        "Dirección: " + direccion + "\n" +
+        "Comuna: " + comuna
+      );
+
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = `
+        <strong>Datos ingresados:</strong><br>
+        Nombre: ${nombre}<br>
+        Correo electrónico: ${correo}<br>
+        Dirección: ${direccion}<br>
+        Comuna: ${comuna}
+      `;
+      resultado.style.display = "block";
+    });
     <div class="btn-volver">
         <a href="index.html">← Volver al Inicio</a>
-    </div>
-
+        </div>
+  </script>
+  
 </body>
 </html>
