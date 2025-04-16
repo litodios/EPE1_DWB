@@ -6,17 +6,17 @@
   <title>Formulario con Comunas</title>
   <style>
     body {
-            margin: 0;
-            padding: 0;
-            background-image: url('donald.webp');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      margin: 0;
+      padding: 0;
+      background-image: url('donald.webp');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     .formulario {
       background-color: white;
@@ -69,24 +69,25 @@
       border-radius: 5px;
       display: none;
     }
-    .btn-esquina {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-}
 
-.btn-esquina:hover {
-    background-color: #0056b3;
-}
+    .btn-esquina {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .btn-esquina:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -105,6 +106,7 @@
       <label for="comuna">Comuna:</label>
       <select id="comuna" required>
         <option value="">Seleccione una comuna</option>
+        <!-- Comunas -->
         <option value="Cerrillos">Cerrillos</option>
         <option value="Cerro Navia">Cerro Navia</option>
         <option value="Conchalí">Conchalí</option>
@@ -145,6 +147,8 @@
     <div class="resultado" id="resultado"></div>
   </div>
 
+  <a href="EPE1MENU.html" class="btn-esquina">← Volver al Inicio</a>
+
   <script>
     document.getElementById("miFormulario").addEventListener("submit", function (event) {
       event.preventDefault();
@@ -153,6 +157,7 @@
       const correo = document.getElementById("correo").value;
       const direccion = document.getElementById("direccion").value;
       const comuna = document.getElementById("comuna").value;
+
       alert(
         "Datos ingresados:\n" +
         "Nombre: " + nombre + "\n" +
@@ -171,10 +176,6 @@
       `;
       resultado.style.display = "block";
     });
-    <div class="btn-volver">
-        <a href="index.html">← Volver al Inicio</a>
-        </div>
   </script>
-  
 </body>
 </html>

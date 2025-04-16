@@ -1,141 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtro de Productos</title>
-    <style>
-              body {
-            margin: 0;
-            padding: 0;
-            background-image: url('mine.webp');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro de Productos</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('mine.webp');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-        h1 {
-            text-align: center;
-        }
+    h1 {
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
 
-        form {
-            max-width: 400px;
-            margin: 0 auto 20px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    form {
+      max-width: 400px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-        input, select, button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-        }
+    input, select, button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
 
-        #resultado {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #f80000;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .btn-esquina {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-}
+    #resultado {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #f80000;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-.btn-esquina:hover {
-    background-color: #0056b3;
-}
+    .producto {
+      padding: 5px;
+      border-bottom: 1px solid #fff;
+    }
 
-        
+    .btn-esquina {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
 
-        .producto {
-            padding: 5px;
-            border-bottom: 1px solid #9901ff;
-        }
-    </style>
+    .btn-esquina:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Filtro de Productos</h1>
+  <h1>Filtro de Productos</h1>
 
-    <form id="formulario">
-        <input type="text" id="nombre" placeholder="Buscar por nombre">
-        <select id="categoria">
-            <option value="">Todas las categorías</option>
-            <option value="Fruta">Fruta</option>
-            <option value="Verdura">Verdura</option>
-        </select>
-        <button type="submit">Filtrar</button>
-    </form>
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Buscar por nombre">
+    <select id="categoria">
+      <option value="">Todas las categorías</option>
+      <option value="Fruta">Fruta</option>
+      <option value="Verdura">Verdura</option>
+    </select>
+    <button type="submit">Filtrar</button>
+  </form>
 
-    <div id="resultado"></div>
+  <div id="resultado"></div>
 
-    <script>
-        const productos = [
-            { nombre: "Manzana", categoria: "Fruta" },
-            { nombre: "Banana", categoria: "Fruta" },
-            { nombre: "Zanahoria", categoria: "Verdura" },
-            { nombre: "Lechuga", categoria: "Verdura" },
-            { nombre: "Naranja", categoria: "Fruta" },
-            { nombre: "Tomate", categoria: "Verdura" },
-            { nombre: "Pera", categoria: "Fruta" },
-            { nombre: "Pepino", categoria: "Verdura" },
-            { nombre: "Uva", categoria: "Fruta" },
-            { nombre: "Espinaca", categoria: "Verdura" }
-        ];
+  <a href="EPE1MENU.html" class="btn-esquina">← Volver al Inicio</a>
 
-        const formulario = document.getElementById("formulario");
-        const resultado = document.getElementById("resultado");
+  <script>
+    const productos = [
+      { nombre: "Manzana", categoria: "Fruta" },
+      { nombre: "Banana", categoria: "Fruta" },
+      { nombre: "Zanahoria", categoria: "Verdura" },
+      { nombre: "Lechuga", categoria: "Verdura" },
+      { nombre: "Naranja", categoria: "Fruta" },
+      { nombre: "Tomate", categoria: "Verdura" },
+      { nombre: "Pera", categoria: "Fruta" },
+      { nombre: "Pepino", categoria: "Verdura" },
+      { nombre: "Uva", categoria: "Fruta" },
+      { nombre: "Espinaca", categoria: "Verdura" }
+    ];
 
-        formulario.addEventListener("submit", function(e) {
-            e.preventDefault();
+    const formulario = document.getElementById("formulario");
+    const resultado = document.getElementById("resultado");
 
-            const nombreFiltro = document.getElementById("nombre").value.toLowerCase();
-            const categoriaFiltro = document.getElementById("categoria").value;
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-            const filtrados = productos.filter(p => {
-                const coincideNombre = p.nombre.toLowerCase().includes(nombreFiltro);
-                const coincideCategoria = categoriaFiltro === "" || p.categoria === categoriaFiltro;
-                return coincideNombre && coincideCategoria;
-            });
+      const nombreFiltro = document.getElementById("nombre").value.toLowerCase();
+      const categoriaFiltro = document.getElementById("categoria").value;
 
-            mostrarResultados(filtrados);
-        });
-        
+      const filtrados = productos.filter(p => {
+        const coincideNombre = p.nombre.toLowerCase().includes(nombreFiltro);
+        const coincideCategoria = categoriaFiltro === "" || p.categoria === categoriaFiltro;
+        return coincideNombre && coincideCategoria;
+      });
 
-        function mostrarResultados(lista) {
-            if (lista.length === 0) {
-                resultado.innerHTML = "<p>No se encontraron productos.</p>";
-                return;
-            }
+      mostrarResultados(filtrados);
+    });
 
-            resultado.innerHTML = lista.map(p => 
-                `<div class="producto">${p.nombre} - ${p.categoria}</div>`
-            ).join("");
-        }
-        <div class="btn-volver">
-        <a href="index.html">← Volver al Inicio</a>
-    </div>
-    </script>
+    function mostrarResultados(lista) {
+      if (lista.length === 0) {
+        resultado.innerHTML = "<p>No se encontraron productos.</p>";
+        return;
+      }
+
+      resultado.innerHTML = lista.map(p => 
+        `<div class="producto">${p.nombre} - ${p.categoria}</div>`
+      ).join("");
+    }
+  </script>
 </body>
 </html>
-
