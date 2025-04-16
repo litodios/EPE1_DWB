@@ -46,6 +46,26 @@
             padding: 20px;
             border-radius: 10px;
         }
+        .btn-esquina {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-esquina:hover {
+    background-color: #0056b3;
+}
+
+        
 
         .producto {
             padding: 5px;
@@ -70,7 +90,6 @@
     <div id="resultado"></div>
 
     <script>
-        // Arreglo de productos
         const productos = [
             { nombre: "Manzana", categoria: "Fruta" },
             { nombre: "Banana", categoria: "Fruta" },
@@ -113,5 +132,12 @@
             ).join("");
         }
     </script>
+    <body>
+     class="container">
+     <h1>Bienvenido</h1>
+     <a href="index.html" class="btn-esquina">← Volver</a>
+     <a href="formulario-contacto.html" class="btn">Formulario de Contacto</a>
+ </div>
 </body>
 </html>
+
