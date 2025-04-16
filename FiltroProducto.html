@@ -120,6 +120,7 @@
 
             mostrarResultados(filtrados);
         });
+        
 
         function mostrarResultados(lista) {
             if (lista.length === 0) {
@@ -131,7 +132,9 @@
                 `<div class="producto">${p.nombre} - ${p.categoria}</div>`
             ).join("");
         }
-
+        <div class="btn-volver">
+        <a href="index.html">← Volver al Inicio</a>
+    </div>
     </script>
 </body>
 </html>
